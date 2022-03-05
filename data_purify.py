@@ -209,7 +209,7 @@ def execute():
     df = pd.read_csv("downloaded_merged.csv").dropna(how='all')
     purifier = 観光データを洗浄(df)
     purified_df = purifier.データを洗浄する()
-    purified_df = purified_df[["名称", "住所", "電話番号", "緯度", "経度", "種別"]]
+    purified_df = purified_df[["名称", "住所", "電話番号", "緯度", "経度", "種別"]].reset_index(drop=True)
     purified_df.to_csv("result.csv")
 
 execute()
